@@ -127,27 +127,28 @@ async function getVedioDetail(videoId){
 
       </div>
 
-      <div className="p-4 min-h-full">
+      <div className="md:p-4 min-h-full">
 
-        <div className="flex flex-col md:flex-row gap-8 p-4 border-none h-full">
+        <div className="flex flex-col md:flex-row gap-8 md:p-4 border-none h-full">
 
         { v1.id  && (
 
 
-                <div className='border-2 border-[#ff0000] rounded-lg p-4 w-full md:w-2/4 flex flex-col justify-between'>
+                <div className='border-2 border-[#ff0000] rounded-lg p-4 w-full md:w-2/4 flex flex-col'>
                   
-                  <div className='p-2 flex gap-4'>
+                  <div className='p-2 flex flex-col md:flex-row gap-4'>
 
-                    <div className='flex gap-4 w-1/4'>
+                    <div className='flex gap-4 w-full md:w-1/4'>
 
                       <div className='border-8 border-[#ff0000] rounded-lg self-stretch'></div>
-                      <div className='w-40 h-40'>
-                      <img src={v1.thumbnail_url} alt="" className='w-full h-full rounded-lg object-cover' />
+
+                      <div className='md:w-40 md:h-40'>
+                        <img src={v1.thumbnail_url} alt="" className='w-full h-full rounded-lg object-cover' />
                       </div>
 
                     </div>
 
-                    <div className='font-extrabold py-8 text-3xl w-3/4'>{v1.title}</div>
+                    <div className='font-extrabold py-8 text-3xl w-3/4 self-center'>{v1.title}</div>
 
                   </div>
 
@@ -177,18 +178,18 @@ async function getVedioDetail(videoId){
 
           <div className='border-2 border-[#0047ff] rounded-lg p-4 w-full md:w-2/4 flex flex-col justify-between'>
 
-          <div className='p-2 flex gap-4'>
+          <div className='p-2 flex flex-col md:flex-row gap-4'>
 
-            <div className='flex gap-4 w-1/4'>
+            <div className='flex gap-4 w-full md:w-1/4'>
 
               <div className='border-8 border-[#0047ff] rounded-lg self-stretch'></div>
-              <div className='w-40 h-40'>
+              <div className='md:w-40 md:h-40'>
               <img src={v2.thumbnail_url} alt="" className='w-full h-full rounded-lg object-cover' />
               </div>
 
             </div>
 
-            <div className='font-extrabold py-8 text-3xl w-3/4'>
+            <div className='font-extrabold py-8 text-3xl w-3/4 self-center'>
             {v2.title}
             </div>
 
