@@ -18,7 +18,10 @@ function App() {
     thumbnail_url: ''
 })
 
+
+
 async function setVideo1(videoId){
+
     getVedioDetail(videoId).then((data) => {
       setV1(data)
     })
@@ -30,22 +33,43 @@ async function setVideo2(videoId){
     })
 }
 
+function extractVideoId(input) {
+  // Regular expression to check if the input is a valid YouTube video ID
+  const videoIdRegex = /^[a-zA-Z0-9_-]{11}$/;
 
-  async function getVedioDetail(videoId){
+  // If the input matches the video ID pattern, return it as is
+  if (videoIdRegex.test(input)) {
+    return input;
+  }
 
-        const url = new URL('https://youtube.googleapis.com/youtube/v3/videos');
-        url.searchParams.append('part', 'snippet,statistics');
-        url.searchParams.append('id', videoId);
-        url.searchParams.append('key',"AIzaSyAJ_cBZSmElM_7hPCW_3DVFmPBl9mYhe9U");
-        const headers = new Headers();
-        headers.append('Accept', 'application/json');
+  // Regular expression to match various YouTube URL formats
+  const urlRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/|v\/|shorts\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})(?:\S+)?/;
 
-        const response = await fetch(url, {
-        method: 'GET',
-        headers: headers
-        });
+  // Try to match the input with URL patterns
+  const match = input.match(urlRegex);
+  return match ? match[1] : null;
 
-        const result = await response.json();
+}
+
+async function getVedioDetail(videoId){
+
+      const vid = extractVideoId(videoId)
+
+      const url = new URL('https://youtube.googleapis.com/youtube/v3/videos');
+      url.searchParams.append('part', 'snippet,statistics');
+      url.searchParams.append('id', vid);
+      url.searchParams.append('key',"AIzaSyAJ_cBZSmElM_7hPCW_3DVFmPBl9mYhe9U");
+      const headers = new Headers();
+      headers.append('Accept', 'application/json');
+
+      const response = await fetch(url, {
+      method: 'GET',
+      headers: headers
+      });
+
+
+      const result = await response.json();
+      if(result.items.length > 0 ){
 
         return {
           id: videoId,
@@ -56,7 +80,19 @@ async function setVideo2(videoId){
           thumbnail_url: result.items[0].snippet.thumbnails.high.url
         }
 
-  }
+      }else {
+        return {
+          id: videoId,
+          title: 'Video not found',
+          views: 0,
+          likes: 0,
+          comment: 0,
+          thumbnail_url: ''
+        }
+      }
+
+
+}
 
   return (
     <>
