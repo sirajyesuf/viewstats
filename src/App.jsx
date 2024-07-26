@@ -231,7 +231,8 @@ async function getVedioDetail(videoId){
     </div>
 
 {/* footer */}
-<div className='w-80 mx-auto py-2 flex gap-2 capitalize'>
+
+<div className='w-80 mx-auto capitalize py-4 flex gap-2 items-center'>
 
   <p> made with </p>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="size-6">
