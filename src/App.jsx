@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import logoPath from "../public/yt.png"
 function App() {
 
   const [v1,setV1] = useState({
@@ -101,7 +101,7 @@ async function getVedioDetail(videoId){
     <div className='flex justify-between items-center px-12 py-2 bg-[#faf9fd]'>
       <div className='w-10 h-10'>
         <a href="/" className='flex items-center gap-2'>
-          <img src="/public/yt.png"/>
+          <img src={logoPath}/>
           <p className='font-bold font-capitalize text-black'>VideoVersus</p>
         </a>
       </div>
