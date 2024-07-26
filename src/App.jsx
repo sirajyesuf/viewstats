@@ -3,19 +3,19 @@ import logoPath from "../public/yt.png"
 function App() {
 
   const [v1,setV1] = useState({
-    id: '',
-    title: '',
-    views: '',
-    likes: '',
+    id: 'youtube video url',
+    title: 'title here',
+    views: '0',
+    likes: '0',
     thumbnail_url: ''
   })
 
   const [v2,setV2] = useState({
-    id: '',
-    title: '',
-    views: '',
-    likes: '',
-    thumbnail_url: ''
+    id: 'youtube video url',
+    title: 'title here',
+    views: '0',
+    likes: '0',
+    thumbnail_url: '0'
 })
 
 
@@ -140,7 +140,7 @@ async function getVedioDetail(videoId){
 
                     <div className='flex gap-4 w-full md:w-1/4'>
 
-                      <div className='border-8 border-[#ff0000] rounded-lg self-stretch'></div>
+                      <div className='border-8 border-[#ff0000] rounded-lg'></div>
 
                       <div className='md:w-40 md:h-40'>
                         <img src={v1.thumbnail_url} alt="" className='w-full h-full rounded-lg object-cover' />
@@ -148,7 +148,7 @@ async function getVedioDetail(videoId){
 
                     </div>
 
-                    <div className='font-extrabold py-8 text-3xl w-3/4 self-center'>{v1.title}</div>
+                    <div className='font-extrabold py-8 text-3xl w-3/4 self-center break-all'>{v1.title}</div>
 
                   </div>
 
@@ -183,13 +183,16 @@ async function getVedioDetail(videoId){
             <div className='flex gap-4 w-full md:w-1/4'>
 
               <div className='border-8 border-[#0047ff] rounded-lg self-stretch'></div>
+
               <div className='md:w-40 md:h-40'>
+
               <img src={v2.thumbnail_url} alt="" className='w-full h-full rounded-lg object-cover' />
+              
               </div>
 
             </div>
 
-            <div className='font-extrabold py-8 text-3xl w-3/4 self-center'>
+            <div className='font-extrabold py-8 text-3xl w-3/4 self-center break-all'>
             {v2.title}
             </div>
 
@@ -226,6 +229,17 @@ async function getVedioDetail(videoId){
     </div>
     </div>
     </div>
+
+{/* footer */}
+<div className='w-80 mx-auto py-2 flex gap-2 capitalize'>
+
+  <p> made with </p>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+  </svg>
+  <p>in Addis Ababa</p>
+
+</div>
 
   </>
 
