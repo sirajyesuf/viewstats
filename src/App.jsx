@@ -75,7 +75,7 @@ async function getVedioDetail(videoId){
           id: videoId,
           title: result.items[0].snippet.title,
           views: result.items[0].statistics.viewCount,
-          likes: result.items[0].statistics.likeCount,
+          likes: result.items[0].statistics.likeCount ?? 0,
           comment: result.items[0].statistics.commentCount,
           thumbnail_url: result.items[0].snippet.thumbnails.high.url
         }
@@ -107,9 +107,9 @@ async function getVedioDetail(videoId){
 
     <div className="min-h-screen mx-auto mt-8 flex flex-col gap-8 font-black px-28 py-8">
 
-      <div className="rounded-md p-4 flex justify-around items-center gap-3">
+      <div className="flex flex-col md:flex-row rounded-md p-4 justify-around items-center gap-3">
 
-        <div className="w-2/4">
+        <div className="w-full md:w-2/4">
         <input type="text" value={v1.id} className="bg-[#f1f3f4] p-4 rounded-full w-full"
         onChange={ e => setVideo1(e.target.value)}
         />
@@ -117,7 +117,7 @@ async function getVedioDetail(videoId){
 
         <p className="text-white border-2 border-[#ff0000] rounded-full p-2 bg-[#ff0000] flex items-center">VS</p>
 
-        <div className="w-2/4">
+        <div className="w-full md:w-2/4">
         <input type="text"  value={v2.id} className="bg-[#f1f3f4] p-4 rounded-full w-full" 
         onChange={e => setVideo2(e.target.value)}
         />
@@ -127,12 +127,12 @@ async function getVedioDetail(videoId){
 
       <div className="p-4 min-h-full">
 
-        <div className="flex gap-8 p-4 border-none h-full">
+        <div className="flex flex-col md:flex-row gap-8 p-4 border-none h-full">
 
         { v1.id  && (
 
 
-                <div className='border-2 border-[#ff0000] rounded-lg p-4 w-2/4 flex flex-col justify-between'>
+                <div className='border-2 border-[#ff0000] rounded-lg p-4 w-full md:w-2/4 flex flex-col justify-between'>
                   
                   <div className='p-2 flex gap-4'>
 
@@ -173,7 +173,7 @@ async function getVedioDetail(videoId){
 
           { v2.id  && (
 
-          <div className='border-2 border-[#0047ff] rounded-lg p-4 w-2/4 flex flex-col justify-between'>
+          <div className='border-2 border-[#0047ff] rounded-lg p-4 w-full md:w-2/4 flex flex-col justify-between'>
 
           <div className='p-2 flex gap-4'>
 
@@ -220,17 +220,14 @@ async function getVedioDetail(videoId){
           </div>
         )}
 
-</div>
-
-
-
-
-
-      </div>
     </div>
-  
+    </div>
+    </div>
+
   </>
+
   )
+
 }
 
 export default App
