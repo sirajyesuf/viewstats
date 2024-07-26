@@ -107,7 +107,7 @@ async function getVedioDetail(videoId){
       </div>
     </div>
 
-    <div className="min-h-screen mx-auto mt-8 flex flex-col gap-8 font-black px-28 py-8">
+    <div className="min-h-screen mx-auto mt-8 flex flex-col gap-8 font-black px-2 py-2 md:px-28 md:py-8">
 
       <div className="flex flex-col md:flex-row rounded-md p-4 justify-around items-center gap-3">
 
