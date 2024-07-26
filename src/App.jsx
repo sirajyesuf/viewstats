@@ -54,11 +54,12 @@ function extractVideoId(input) {
 async function getVedioDetail(videoId){
 
       const vid = extractVideoId(videoId)
+      const key = import.meta.env.VITE_YOUTUBE_API_KEY
 
       const url = new URL('https://youtube.googleapis.com/youtube/v3/videos');
       url.searchParams.append('part', 'snippet,statistics');
       url.searchParams.append('id', vid);
-      url.searchParams.append('key',"AIzaSyAJ_cBZSmElM_7hPCW_3DVFmPBl9mYhe9U");
+      url.searchParams.append('key',key);
       const headers = new Headers();
       headers.append('Accept', 'application/json');
 
@@ -69,6 +70,7 @@ async function getVedioDetail(videoId){
 
 
       const result = await response.json();
+      console.log(result)
       if(result.items.length > 0 ){
 
         return {
