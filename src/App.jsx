@@ -97,7 +97,7 @@ function App() {
     </div>
     <div className="bg-[#fafcff] min-h-screen mx-auto mt-8 flex flex-col gap-8 font-black px-28 py-8">
 
-      <div className="border-2 border-[#eff1f3] rounded-md p-4 flex justify-around items-center gap-3">
+      <div className="rounded-md p-4 flex justify-around items-center gap-3">
 
         <div className="w-2/4">
         <input type="text" value={v1} className="bg-[#f1f3f4] p-4 rounded-full w-full"
@@ -123,34 +123,34 @@ function App() {
 
 
                 <div className='border-2 border-[#ff0000] rounded-lg p-4 w-2/4'>
-                  <div className='p-2 flex gap-2 items-center'>
-                      <div className='border-4 border-[#ff0000] rounded-lg self-stretch'></div>
-                      <div className=''>
-                        <img src={v1Detail.items[0].snippet.thumbnails.high.url} alt="" className='w-full h-full rounded-lg' />
+                  <div className='p-2 flex gap-4'>
+                      <div className='border-8 border-[#ff0000] rounded-lg self-stretch'></div>
+                      <div className='w-40 h-40'>
+                        <img src={v1Detail.items[0].snippet.thumbnails.high.url} alt="" className='w-full h-full rounded-lg bg-cover' />
                       </div>
-                      <div className='text-capital font-bold'>
+                      <h1 className='text-capital font-extrabold py-8 text-3xl'>
                         {v1Detail.items[0].snippet.title}
-                      </div>
+                      </h1>
                   </div>
 
-                  <div className='flex justify-around'>
+                  <div className='flex justify-evenly py-4'>
 
                     <div className='flex flex-col items-center'>
-                      <p>Total View</p>
+                      <p className='font-bold text-xl'>Total View</p>
                       <p>
                         {v1Detail.items[0].statistics.viewCount}
                       </p>
                     </div>
 
                     <div className='flex flex-col items-center'>
-                      <p>likes</p>
+                      <p className='font-bold text-xl'>Likes</p>
                       <p>
                         {v1Detail.items[0].statistics.likeCount}
                       </p>
                     </div>
 
                     <div className='flex flex-col items-center'>
-                      <p>comment</p>
+                      <p className='font-bold text-xl'>Comment</p>
                       <p>
                         {v1Detail.items[0].statistics.commentCount}
                       </p>
@@ -164,34 +164,34 @@ function App() {
           { v2 !='' & v2Detail != '' && (
 
           <div className='border-2 border-[#0047ff] rounded-lg p-4 w-2/4'>
-          <div className='p-2 flex gap-2 items-center'>
-              <div className='border-4 border-[#0047ff] rounded-lg self-stretch'></div>
-              <div className=''>
-              <img src={v2Detail.items[0].snippet.thumbnails.high.url} alt="" className='w-full h-full rounded-lg' />
+          <div className='p-2 flex gap-4'>
+              <div className='border-8 border-[#0047ff] rounded-lg self-stretch'></div>
+              <div className='w-40 h-40'>
+              <img src={v2Detail.items[0].snippet.thumbnails.high.url} alt="" className='w-full h-full rounded-lg bg-cover' />
               </div>
-              <div className=''>
+              <div className='font-extrabold py-8 text-3xl'>
               {v2Detail.items[0].snippet.title}
               </div>
           </div>
             
-            <div className='flex justify-around'>
+            <div className='flex justify-evenly py-4'>
 
             <div className='flex flex-col items-center'>
-              <p>Total View</p>
+              <p className='font-bold text-xl'>Total View</p>
               <p>
                 {v2Detail.items[0].statistics.viewCount}
               </p>
             </div>
 
             <div className='flex flex-col items-center'>
-              <p>likes</p>
+              <p className='font-bold text-xl'>Likes</p>
               <p>
                 {v2Detail.items[0].statistics.likeCount}
               </p>
             </div>
 
             <div className='flex flex-col items-center'>
-              <p>comment</p>
+              <p className='font-bold text-xl'>Comment</p>
               <p>
                 {v2Detail.items[0].statistics.commentCount}
               </p>
