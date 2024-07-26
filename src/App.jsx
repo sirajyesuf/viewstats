@@ -86,7 +86,17 @@ function App() {
   }
 
   return (
-    <div className="bg-white h-full w-3/4 mx-auto mt-20 flex flex-col gap-8 font-black">
+    <>
+    <div className='flex justify-between items-center px-12 py-2 bg-white'>
+      <div className='w-10 h-10'>
+        <a href="/" className='flex items-center gap-2'>
+          <img src="./public/yt.png"/>
+          <p className='font-bold font-capitalize text-black'>VideoVersus</p>
+        </a>
+      </div>
+    </div>
+    <div className="bg-[#fafcff] min-h-screen mx-auto mt-8 flex flex-col gap-8 font-black px-28 py-8">
+
       <div className="border-2 border-[#eff1f3] rounded-md p-4 flex justify-around items-center gap-3">
 
         <div className="w-2/4">
@@ -107,7 +117,7 @@ function App() {
 
       <div className="p-4 min-h-full">
 
-        <div className="flex gap-8  p-4 border-green-300 border-4 h-full">
+        <div className="flex gap-8 p-4 border-none h-full">
 
         { v1 != '' & v1Detail != '' && (
 
@@ -200,6 +210,8 @@ function App() {
 
       </div>
     </div>
+  
+  </>
   )
 }
 
