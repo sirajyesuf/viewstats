@@ -101,7 +101,7 @@ async function getVedioDetail(videoId){
     <div className='flex justify-between items-center px-12 py-2 bg-[#faf9fd]'>
       <div className='w-10 h-10'>
         <a href="/" className='flex items-center gap-2'>
-          <img src="./public/yt.png"/>
+          <img src="/public/yt.png"/>
           <p className='font-bold font-capitalize text-black'>VideoVersus</p>
         </a>
       </div>
